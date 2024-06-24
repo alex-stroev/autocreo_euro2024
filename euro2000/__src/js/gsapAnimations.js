@@ -33,18 +33,18 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     const tlStaticHeaderOffer100 = gsap.timeline({ paused: paused, ...static100options });
     const tlStaticAsideBallRight = gsap.timeline({ paused: paused });
-    const tlStaticAsideOffers100 = gsap.timeline({ paused: paused, ...static100options });
+    const tlStaticAsideOffers2000 = gsap.timeline({ paused: paused, ...static100options });
 
     // tlStaticHeader.from(".header .offer-100 span", { y: "-100%", autoAlpha: 0, duration: zzz });
 
-    tlStaticHeaderOffer100.from(".header .offer-100 span", { y: "-200%", autoAlpha: 0, duration: 0.3 });
-    tlStaticHeaderOffer100.from(".header .offer-100__header", { y: "-150%", autoAlpha: 0 });
+    tlStaticHeaderOffer100.from(".gsap-top-1", { y: "-200%", autoAlpha: 0, duration: 0.3 });
+    tlStaticHeaderOffer100.from(".gsap-top-2", { y: "-150%", autoAlpha: 0 });
 
-    tlStaticAsideOffers100.from(".gsap-aside-2", { y: "-200%", autoAlpha: 0 });
-    tlStaticAsideOffers100.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
+    tlStaticAsideOffers2000.from(".gsap-aside-2", { y: "-200%", autoAlpha: 0 });
+    tlStaticAsideOffers2000.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
 
     // Для запуска прописываем все таймлайны в массив
-    const animationsStatic = [tlStaticHeaderOffer100, tlStaticAsideOffers100];
+    const animationsStatic = [tlStaticHeaderOffer100, tlStaticAsideOffers2000];
 
     //////////////////////////////////////////////////////////////////////////////
     //   Анимации для  кадра с данными

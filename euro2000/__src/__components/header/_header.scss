@@ -76,6 +76,18 @@ $midwidth: auto;
         padding-right: 18px;
         white-space: nowrap;
         align-items: center;
+
+        .in-sports &,
+        .in-championat & {
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+
+            img {
+                width: 500px;
+                max-width: 100%;
+            }
+        }
     }
 
     &__logo {
