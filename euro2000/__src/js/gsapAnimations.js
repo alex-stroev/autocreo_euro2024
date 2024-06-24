@@ -32,7 +32,6 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     const tlStaticHeaderOffer100 = gsap.timeline({ paused: paused, ...static100options });
-    const tlStaticAsideBallLeft = gsap.timeline({ paused: paused });
     const tlStaticAsideBallRight = gsap.timeline({ paused: paused });
     const tlStaticAsideOffers100 = gsap.timeline({ paused: paused, ...static100options });
 
@@ -40,14 +39,12 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     tlStaticHeaderOffer100.from(".header .offer-100 span", { y: "-200%", autoAlpha: 0, duration: 0.3 });
     tlStaticHeaderOffer100.from(".header .offer-100__header", { y: "-150%", autoAlpha: 0 });
-    tlStaticAsideBallLeft.from(".i-aside-left .aside__ball", { duration: ballAnimationDuration, autoAlpha: 0, x: "120%", rotate: "360deg", delay: 0, repeatDelay: 0.9, repeat: ballsPepeat, yoyo: true, ease: ballEase });
-    tlStaticAsideBallRight.from(".i-aside-right .aside__ball", { duration: ballAnimationDuration, autoAlpha: 0, x: "-120%", rotate: "-360deg", delay: 0, repeatDelay: 0.9, repeat: ballsPepeat, yoyo: true, ease: ballEase });
 
     tlStaticAsideOffers100.from(".gsap-aside-2", { y: "-200%", autoAlpha: 0 });
     tlStaticAsideOffers100.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
 
     // Для запуска прописываем все таймлайны в массив
-    const animationsStatic = [tlStaticHeaderOffer100, tlStaticAsideBallLeft, tlStaticAsideBallRight, tlStaticAsideOffers100];
+    const animationsStatic = [tlStaticHeaderOffer100, tlStaticAsideOffers100];
 
     //////////////////////////////////////////////////////////////////////////////
     //   Анимации для  кадра с данными
