@@ -50,13 +50,20 @@ $midwidth: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // height: 100%;
         gap: 0;
-        flex-basis: 246px;
+        // flex-basis: 246px;
+        flex-basis: 15%;
 
-        @media (max-width: $tbp) {
-            flex-basis: auto;
-        }
+        // @media (max-width: $tbp) {
+        //     flex-basis: auto;
+        // }
+
+        // .in-soccer &,
+        // .in-lr & {
+        //     @media (max-width: 1800px) {
+        //         background-color: brown;
+        //     }
+        // }
     }
 
     &__center {
@@ -64,9 +71,15 @@ $midwidth: auto;
         justify-content: center;
         align-items: center;
         text-align: center;
-        // flex-grow: 100;
-        flex: 100 100 0;
-        align-items: center;
+
+        .body-frame-1 & {
+            flex-basis: 30%;
+        }
+
+        .body-frame-2 & {
+            flex-basis: auto;
+            flex: 100 100 0;
+        }
     }
 
     &__right {
@@ -88,6 +101,16 @@ $midwidth: auto;
                 max-width: 100%;
             }
         }
+
+        .in-soccer &,
+        .in-lr & {
+            flex: 5 5 0;
+            gap: 32px;
+
+            img {
+                height: 52px;
+            }
+        }
     }
 
     &__logo {
@@ -97,9 +120,9 @@ $midwidth: auto;
 
         img {
             height: auto;
-            @media (max-width: $tbp) {
-                width: (246 / 1200 * 100vw);
-            }
+            // @media (max-width: $tbp) {
+            //     width: (246 / 1200 * 100vw);
+            // }
         }
     }
 
@@ -122,6 +145,60 @@ $midwidth: auto;
         span {
             display: block;
             animation: moveTextRow 30s linear infinite;
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
+    /// сдвоенные кнопки
+    /////////////////////////////////////////////////////////////////
+    &__getbonus,
+    &__promo {
+        $bfs: 22;
+        color: #fff;
+        text-align: center;
+
+        font-weight: 900;
+        text-transform: uppercase;
+        border-radius: 8px;
+        background: var(--crimson);
+        box-sizing: border-box;
+
+        //
+        font-size: $bfs * 1px;
+        padding: 8px 16px;
+        @include fluid_typo_auto($tbp, 22, 14);
+
+        .in-soccer &,
+        .in-lr & {
+            @include fluid_typo_auto(1600, 22, 14);
+        }
+
+        .in-sports &,
+        .in-championat & {
+            display: block;
+            width: 100%;
+        }
+
+        // .body-frame-2 & {
+        //     opacity: 1 !important;
+        //     visibility: visible !important;
+        // }
+    }
+
+    &__promo {
+        font-weight: 400;
+        background-color: transparent;
+        border: 2px solid var(--emph);
+        padding: 6px 16px;
+        box-sizing: border-box;
+
+        span {
+            font-weight: 900;
+            color: var(--emph);
+        }
+
+        .body-frame-2 & {
+            display: none;
         }
     }
 }

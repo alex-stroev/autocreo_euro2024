@@ -218,24 +218,6 @@ body {
 
 //////////////////////////////////////////////
 
-.get-bonus-main {
-    $bfs: 22;
-    color: #fff;
-    text-align: center;
-
-    font-weight: 900;
-    text-transform: uppercase;
-    border-radius: 8px;
-    background: var(--crimson);
-    box-sizing: border-box;
-
-    //
-    font-size: $bfs * 1px;
-    // padding: (8em / $bfs) (16em / $bfs);
-    padding: 8px 16px;
-    @include fluid_typo_auto($tbp, 22, 14);
-}
-
 .get-bonus-aside {
     margin: 8px 2px 0;
     border-radius: 6px;
@@ -271,3 +253,11 @@ body {
     display: none;
     opacity: 0;
 }
+
+// .body-frame-1 {
+//     background-color: orchid !important;
+// }
+
+// .body-frame-2 {
+//     background-color: limegreen !important;
+// }

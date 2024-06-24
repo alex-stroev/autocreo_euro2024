@@ -1,9 +1,12 @@
 const gsapAnimations = (data, AUTOEVENT) => {
+    const BODY = document.body || document.getElementsByTagName("body")[0];
+
     // Время указываем в секундах
     const ballAnimationDuration = 1.5;
 
     const frameFadeDuration = 0.3;
     const frameStageDuration = ballAnimationDuration * 2 + frameFadeDuration * 2;
+
     const animationDuration = 0.4; //0.4
     const frame2duration = ballAnimationDuration * 1.75;
 
@@ -12,9 +15,6 @@ const gsapAnimations = (data, AUTOEVENT) => {
     const frameApi = document.querySelectorAll(".gsap-frame--api");
     const isData = Boolean(data.CHAMP);
     const repeatCase = isData && AUTOEVENT;
-    const ballsPepeat = repeatCase ? 1 : -1;
-
-    const ballEase = "back.inOut(1.7)";
 
     const static100options = {
         yoyo: true,
@@ -32,13 +32,14 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     const tlStaticHeaderOffer100 = gsap.timeline({ paused: paused, ...static100options });
-    const tlStaticAsideBallRight = gsap.timeline({ paused: paused });
     const tlStaticAsideOffers2000 = gsap.timeline({ paused: paused, ...static100options });
+    const tlStaticHeaderGETBONUS = gsap.timeline();
 
     // tlStaticHeader.from(".header .offer-100 span", { y: "-100%", autoAlpha: 0, duration: zzz });
 
     tlStaticHeaderOffer100.from(".gsap-top-1", { y: "-200%", autoAlpha: 0, duration: 0.3 });
-    tlStaticHeaderOffer100.from(".gsap-top-2", { y: "-150%", autoAlpha: 0 });
+    tlStaticHeaderOffer100.from(".gsap-top-2", { scale: 0, autoAlpha: 0 });
+    tlStaticHeaderGETBONUS.from(".header__getbonus", { scale: 0, autoAlpha: 0 }); // запускаеи ОДИН РАЗ, в цикл НЕ включаем
 
     tlStaticAsideOffers2000.from(".gsap-aside-2", { y: "-200%", autoAlpha: 0 });
     tlStaticAsideOffers2000.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
@@ -50,6 +51,7 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //   Анимации для  кадра с данными
     //////////////////////////////////////////////////////////////////////////////
     const tlAPIheaderCHAMP = gsap.timeline({ paused: paused });
+    const tlAPIheaderGETBONUS = gsap.timeline({ paused: paused });
     const tlAPIheaderQuotes = gsap.timeline({ paused: paused });
     const topAPIball = gsap.timeline({ paused: paused });
     const tlAPIasideQuotesLeft = gsap.timeline({ paused: paused });
@@ -58,6 +60,7 @@ const gsapAnimations = (data, AUTOEVENT) => {
     const tlAPIasideTshirtRight = gsap.timeline({ paused: paused });
 
     tlAPIheaderCHAMP.from(".top-banner__champ", { y: "-100%", autoAlpha: 0, duration: 0.5, delay: frameFadeDuration });
+    // tlAPIheaderGETBONUS.from(".header__getbonus", { autoAlpha: 0, scale: 0, duration: 0.1, onComplete: alert("dddd") });
     tlAPIheaderQuotes.from(".top-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
 
     // topAPIball.from(".large-header__top img", { y: "-1500%", autoAlpha: 0, duration: 3, ease: "bounce.out"});
@@ -110,6 +113,8 @@ const gsapAnimations = (data, AUTOEVENT) => {
         });
         setTimeout(() => {
             stopAnimations(animationsAPI);
+            BODY.classList.add("body-frame-1");
+            BODY.classList.remove("body-frame-2");
         }, frameFadeDuration * 1000);
     }
 
@@ -126,6 +131,8 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
         setTimeout(() => {
             stopAnimations(animationsStatic);
+            BODY.classList.add("body-frame-2");
+            BODY.classList.remove("body-frame-1");
         }, frameFadeDuration * 1000);
     }
 
