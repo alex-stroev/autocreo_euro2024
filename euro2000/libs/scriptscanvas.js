@@ -1,5 +1,11 @@
 /* eslint-disable new-cap */
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
+//     document.querySelectorAll(".js-canvas").forEach((canvas) => {
+//         init(canvas);
+//     });
+// });
+
+window.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".js-canvas").forEach((canvas) => {
         init(canvas);
     });
@@ -25,6 +31,7 @@ setInterval(changeText, 5000);
 bodyWrap.classList.add("body-wrap--first");
 
 function init(canvas) {
+    console.log(canvas)
     let comp;
     let lib;
     let loader = new createjs.LoadQueue(false);
