@@ -22,7 +22,6 @@
 
     .in-soccer & {
         width: $content-width-soccer + $aside-width * 2;
-        // background-color: red;
 
         @media (max-width: $soccer_bp) {
             // background-color: lime;
@@ -60,6 +59,9 @@
         align-items: flex-start;
         justify-content: center;
         position: relative;
+
+        left: 50%;
+        transform: translateX(-50%);
 
         @media (max-width: $toggle) {
             left: 50%;
