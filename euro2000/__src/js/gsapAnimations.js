@@ -37,11 +37,11 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     // tlStaticHeader.from(".header .offer-100 span", { y: "-100%", autoAlpha: 0, duration: zzz });
 
-    tlStaticHeaderOffer100.from(".gsap-top-1", { y: "-200%", autoAlpha: 0, duration: 0.3 });
+    tlStaticHeaderOffer100.from(".gsap-top-1", { scale: 0, autoAlpha: 0, duration: 0.3 });
     tlStaticHeaderOffer100.from(".gsap-top-2", { scale: 0, autoAlpha: 0 });
-    tlStaticHeaderGETBONUS.from(".header__getbonus", { scale: 0, autoAlpha: 0 }); // запускаеи ОДИН РАЗ, в цикл НЕ включаем
+    tlStaticHeaderGETBONUS.from(".header__getbonus", { autoAlpha: 0 }); // запускаеи ОДИН РАЗ, в цикл НЕ включаем
 
-    tlStaticAsideOffers2000.from(".gsap-aside-2", { y: "-200%", autoAlpha: 0 });
+    tlStaticAsideOffers2000.from(".aside__promo", { autoAlpha: 0 });
     tlStaticAsideOffers2000.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
 
     // Для запуска прописываем все таймлайны в массив
@@ -51,7 +51,7 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //   Анимации для  кадра с данными
     //////////////////////////////////////////////////////////////////////////////
     const tlAPIheaderCHAMP = gsap.timeline({ paused: paused });
-    const tlAPIheaderGETBONUS = gsap.timeline({ paused: paused });
+    // const tlAPIheaderGETBONUS = gsap.timeline({ paused: paused });
     const tlAPIheaderQuotes = gsap.timeline({ paused: paused });
     const topAPIball = gsap.timeline({ paused: paused });
     const tlAPIasideQuotesLeft = gsap.timeline({ paused: paused });
