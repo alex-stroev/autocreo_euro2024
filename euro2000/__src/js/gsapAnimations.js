@@ -37,8 +37,8 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     // tlStaticHeader.from(".header .offer-100 span", { y: "-100%", autoAlpha: 0, duration: zzz });
 
-    tlStaticHeaderOffer100.from(".gsap-top-1", { scale: 0, autoAlpha: 0, duration: 0.3 });
-    tlStaticHeaderOffer100.from(".gsap-top-2", { scale: 0, autoAlpha: 0 });
+    tlStaticHeaderOffer100.from(".gsap-top-1", { autoAlpha: 0, duration: 0.3 });
+    tlStaticHeaderOffer100.from(".gsap-top-2", { autoAlpha: 0 });
     tlStaticHeaderGETBONUS.from(".header__getbonus", { autoAlpha: 0 }); // запускаеи ОДИН РАЗ, в цикл НЕ включаем
 
     tlStaticAsideOffers2000.from(".aside__promo", { autoAlpha: 0 });
@@ -60,7 +60,6 @@ const gsapAnimations = (data, AUTOEVENT) => {
     const tlAPIasideTshirtRight = gsap.timeline({ paused: paused });
 
     tlAPIheaderCHAMP.from(".top-banner__champ", { y: "-100%", autoAlpha: 0, duration: 0.5, delay: frameFadeDuration });
-    // tlAPIheaderGETBONUS.from(".header__getbonus", { autoAlpha: 0, scale: 0, duration: 0.1, onComplete: alert("dddd") });
     tlAPIheaderQuotes.from(".top-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
 
     // topAPIball.from(".large-header__top img", { y: "-1500%", autoAlpha: 0, duration: 3, ease: "bounce.out"});
